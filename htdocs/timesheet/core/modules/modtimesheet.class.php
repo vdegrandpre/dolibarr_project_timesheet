@@ -565,7 +565,7 @@ class modTimesheet extends DolibarrModules
             // allow ext id of 32 char
            // $extrafields->addExtraField('external_id', "ExternalId", 'varchar', 100, 32, 'user', 1, 0, '', '', 1, '$user->rights->timesheet->AttendanceAdmin', 3, 'specify the id of the external system', '', 0, 'timesheet@ptimesheet', '$conf->global->ATTENDANCE_EXT_SYSTEM');
             // add the "invoicable" bool to the task
-            $extrafields->addExtraField('invoiceable', "Invoiceable", 'boolean', 1, '', 'projet_task', 0, 0, '', '', 1, 1, 1, 0, '', 0, 'timesheet@timesheet', '$conf->timesheet->enabled');
+            if version_compare($DOL_VERSION, 21, '>=') $extrafields->addExtraField('invoiceable', "Invoiceable", 'boolean', 1, '', 'projet_task', 0, 0, '', '', 1, 1, 1, 0, '', 0, 'timesheet@timesheet', '$conf->timesheet->enabled');
             return $this->_init($sql, $options);
         }
         /**

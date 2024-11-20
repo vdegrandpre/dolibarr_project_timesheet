@@ -73,7 +73,7 @@ if (empty($dateStart) || empty($dateEnd) ||$dateStart == $dateEnd) {
  $langs->load("main");
 $langs->load("projects");
 $langs->load('timesheet@timesheet');
-$DOL_VERSION_SUP_21 = version_compare($DOL_VERSION, '21', '>=')
+$DOL_VERSION_SUP_21 = version_compare(DOL_VERSION, '21', '>=');
 //steps
     switch($step) {
         case 2:
@@ -92,7 +92,7 @@ $DOL_VERSION_SUP_21 = version_compare($DOL_VERSION, '21', '>=')
                 $sql .= "' AND '".$db->idate($dateEnd)."'";
              if ($invoicabletaskOnly == 1){
                 if ($DOL_VERSION_SUP_21){
-                    $sql .= ' AND t.billable = \'1\''
+                    $sql .= ' AND t.billable = \'1\'';
                 }
                 else {
                     $sql .= ' AND tske.invoiceable = \'1\'';

@@ -38,7 +38,7 @@ $action = GETPOST('action', 'alpha');
 $project = GETPOST('project', 'int');
 $task = GETPOST('taskid', 'int');
 $customer = GETPOST('customer', 'int');
-$json = GETPOST('json', 'json');
+$json = GETPOST('json');
 $today = time();
 // Load traductions files requiredby by page
 //$langs->load("companies");

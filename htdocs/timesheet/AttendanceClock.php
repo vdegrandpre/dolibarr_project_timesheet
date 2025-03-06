@@ -38,7 +38,7 @@ $action = GETPOST('action', 'alpha');
 $project = GETPOST('project', 'int');
 $task = GETPOST('taskid', 'int');
 $customer = GETPOST('customer', 'int');
-$json = GETPOST('json');
+$json = GETPOST('json','nohtml');
 $today = time();
 // Load traductions files requiredby by page
 //$langs->load("companies");
@@ -94,7 +94,7 @@ switch($action) {
         // ob_end_flush();
         exit();
     case 'heartbeat':
-        $json = $timesheet_attendance->ajaxheartbeat($user, $json);
+	    $json = $timesheet_attendance->ajaxheartbeat($user, $json);
        // ob_clean();
         header("Content-type: text/json;charset = utf-8");
         ob_clean();

@@ -913,7 +913,7 @@ class TimesheetTask extends Task
                     break;
                 case 'ProgressDeclared':
                     require_once DOL_DOCUMENT_ROOT.'/core/class/html.formother.class.php';
-                    $formother = new FormOther($db);
+                    $formother = new FormOther($this->db);
                     $html .= $formother->select_percent($this->progress,
                         'progressTask['.$this->userId.']['.$this->id.']', 0, 5, 0, 100, 1);
                     break;
